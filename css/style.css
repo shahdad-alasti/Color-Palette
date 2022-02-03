@@ -1,5 +1,80 @@
+:root {
+  --border: #333;
+  --background: #7c7c7c;
+  --pixel-background: #292929;
+}
 * {
   margin: 0;
   padding: 0;
   user-select: none;
+}
+body {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+.container {
+  display: grid;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  place-items: center;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-bottom: none;
+}
+.navbar > * {
+  display: grid;
+  align-content: center;
+}
+.reset-btn,
+.size {
+  width: 60px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  color: #aaa;
+  background-color: var(--border);
+  box-shadow: 0px 1px 3px 1px #252525;
+  cursor: pointer;
+}
+.size {
+  width: 55px;
+  padding-left: 5px;
+  color: #252525;
+  background-color: #fff;
+  outline: none;
+}
+.color{
+  width: 60px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 3px 1px #252525;
+  cursor: pointer;
+  align-content: unset;
+}
+.content {
+  --size: 10;
+  display: grid;
+  width: 390px;
+  height: 390px;
+  background-color: var(--background);
+  border: 1px solid black;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
+  gap: 1px;
+  padding: 5px;
+}
+.pixel {
+  background-color: var(--pixel-background);
 }
